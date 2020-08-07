@@ -1,12 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
+using System.IO;
 using System.Media;
-using System.Text;
-using System.Threading.Tasks;
+using System.Reflection;
 using System.Windows.Forms;
 
 namespace HeadphonesTest
@@ -22,8 +17,14 @@ namespace HeadphonesTest
         {
             //SystemSounds.Question.Play();
 
-            SoundPlayer simpleSound = new SoundPlayer(@"pack://application:,,,/Sounds\6.wav");
+            SoundPlayer simpleSound = new SoundPlayer(@"Sounds\6.wav");
             simpleSound.Play();
+
+            //Stream stream = Assembly.GetExecutingAssembly().GetManifestResourceStream("HeadphonesTest.6.wav");
+            //FileStream fileStream = new FileStream("sound.wav", FileMode.OpenOrCreate);
+            //for (int i = 0; i < stream.Length; i++)
+            //    fileStream.WriteByte((byte)stream.ReadByte());
+            //fileStream.Close();
         }
     }
 }

@@ -12,7 +12,7 @@
 
   <ItemGroup>
     <Resource Include="Sounds\6.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
   </ItemGroup>
 
