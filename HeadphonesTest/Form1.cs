@@ -17,14 +17,14 @@ namespace HeadphonesTest
         {
             //SystemSounds.Question.Play();
 
-            SoundPlayer simpleSound = new SoundPlayer(@"Sounds\6.wav");
-            simpleSound.Play();
+            //SoundPlayer simpleSound = new SoundPlayer(@"Sounds\6.wav");
+            //simpleSound.Play();
 
-            //Stream stream = Assembly.GetExecutingAssembly().GetManifestResourceStream("HeadphonesTest.6.wav");
-            //FileStream fileStream = new FileStream("sound.wav", FileMode.OpenOrCreate);
-            //for (int i = 0; i < stream.Length; i++)
-            //    fileStream.WriteByte((byte)stream.ReadByte());
-            //fileStream.Close();
+            Stream stream = Assembly.GetExecutingAssembly().GetManifestResourceStream("HeadphonesTest.Sounds.6.wav");
+            FileStream fileStream = new FileStream("sound.wav", FileMode.OpenOrCreate);
+            for (int i = 0; i < stream.Length; i++)
+                fileStream.WriteByte((byte)stream.ReadByte());
+            fileStream.Close();
         }
     }
 }

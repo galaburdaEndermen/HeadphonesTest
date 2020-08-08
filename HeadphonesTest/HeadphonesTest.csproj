@@ -11,9 +11,9 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Resource Include="Sounds\6.wav">
+    <EmbeddedResource Include="Sounds\6.wav">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Resource>
+    </EmbeddedResource>
   </ItemGroup>
 
 </Project>
