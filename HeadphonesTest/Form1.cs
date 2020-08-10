@@ -17,7 +17,6 @@ namespace HeadphonesTest
 
         private void button1_Click(object sender, EventArgs e)
         {
-
             SoundPlayer simpleSound = new SoundPlayer(stream);
             simpleSound.Play();
             stream.Position = 0;
