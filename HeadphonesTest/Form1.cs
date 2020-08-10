@@ -13,18 +13,23 @@ namespace HeadphonesTest
             InitializeComponent();
         }
 
+        private Stream stream;
+
         private void button1_Click(object sender, EventArgs e)
         {
-            //SystemSounds.Question.Play();
 
-            //SoundPlayer simpleSound = new SoundPlayer(@"Sounds\6.wav");
-            //simpleSound.Play();
+            SoundPlayer simpleSound = new SoundPlayer(stream);
+            simpleSound.Play();
+            stream.Position = 0;
+        }
 
-            Stream stream = Assembly.GetExecutingAssembly().GetManifestResourceStream("HeadphonesTest.Sounds.6.wav");
-            FileStream fileStream = new FileStream("sound.wav", FileMode.OpenOrCreate);
-            for (int i = 0; i < stream.Length; i++)
-                fileStream.WriteByte((byte)stream.ReadByte());
-            fileStream.Close();
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            stream = Assembly.GetExecutingAssembly().GetManifestResourceStream("HeadphonesTest.Sounds.6.wav");
+            if (stream == null)
+            {
+                MessageBox.Show("Error!");
+            }
         }
     }
 }
